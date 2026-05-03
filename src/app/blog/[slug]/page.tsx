@@ -100,6 +100,10 @@ Riscul neconformității este mult mai mare decât costul unui abonament SSM. Ac
   },
 }
 
+export function generateStaticParams() {
+  return Object.keys(posts).map((slug) => ({ slug }))
+}
+
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const post = posts[params.slug]
   if (!post) return {}
