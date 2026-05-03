@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 
 const nav = [
   { label: 'Acasă', href: '/' },
@@ -31,12 +30,10 @@ export default function Header() {
             className="relative flex items-center translate-y-8 hover:scale-105 transition-transform duration-200"
             style={{ filter: 'drop-shadow(0 8px 24px rgba(0,182,255,0.35))' }}
           >
-            <Image
-              src="/logo.svg"
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/logo.svg`}
               alt="NEBO SAFETY"
-              width={624}
-              height={188}
-              priority
               className="h-48 w-auto"
             />
           </Link>
